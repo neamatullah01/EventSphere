@@ -2,7 +2,7 @@ import { FaSearch } from 'react-icons/fa';
 const Banner = () => {
     return (
         <div className='relative'>
-            <div className="carousel w-full h-[78vh] rounded-sm">
+            <div className="carousel w-full h-[78vh] rounded-md">
                 <div id="slide1" className="carousel-item relative w-full">
                     
                     <img src="https://i.ibb.co/N6NQMmc/birthday-celebrations-with-screaming-friends.jpg" className="w-full" />
@@ -34,7 +34,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-2 md:gap-0 justify-around items-center w-full md:w-3/4 bg-[#000080] md:h-36 rounded absolute -bottom-12 md:left-32">
+            <div className="flex gap-2 md:gap-0 justify-around items-center w-full md:w-3/4 bg-[#000080] md:h-36 rounded-xl absolute -bottom-12 md:left-32">
                 <div className="space-y-2">
                     <h3 className="text-white text-base font-normal">Looking for</h3>
                     <select className="select w-full max-w-xs">
