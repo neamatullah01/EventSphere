@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -20,7 +20,7 @@ const NavBar = () => {
             {navLinks}
           </ul>
         </div>
-      <a className="btn btn-ghost normal-case text-xl block">Event<span className="text-[#000080]">Sphere</span></a>
+        <a className="btn btn-ghost normal-case text-xl block">Event<span className="text-[#000080]">Sphere</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -28,7 +28,9 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-outline">Login</a>
+        <Link to = "/login">
+          <a className="btn btn-outline">Login</a>
+        </Link>
       </div>
     </div>
   );
