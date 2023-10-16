@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
     return (
         <div className="hero">
             <div className="hero-content flex-col w-full">
                 <div className="text-center py-3">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl font-bold">Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-2/4 shadow-2xl bg-base-100">
                     <form className="card-body w-full">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Name" className="input input-bordered"/>
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -25,14 +31,14 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary bg-[#000080]">Login</button>
+                            <button className="btn btn-primary bg-[#000080]">Register</button>
                         </div>
                     </form>
-                    <p className="text-center mb-5 ">Do not have an account? <Link className="font-semibold text-blue-600" to="/register">Register</Link></p>
+                    <p className="text-center mb-5 ">Already have an account? <Link className="font-semibold text-blue-600" to="/login">Login Now</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;
