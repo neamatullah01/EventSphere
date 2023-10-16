@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const Cards = ({ data }) => {
-    const { type, description, image, price } = data;
+    const {id, type, description, image, price } = data;
     return (
         <div className="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
             <div style={{ backgroundImage: `url(${image})` }} className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
@@ -16,7 +17,9 @@ const Cards = ({ data }) => {
                 <h5 className="mb-4 block font-sans text-lg font-semibold leading-snug tracking-normal text-gray-400 antialiased">
                     Price: {price}tk
                 </h5>
-                <button className="relative btn btn-secondary bg-[#000080] border-0 object-cover object-center">See Details</button>
+                <Link to = {`/details/${id}`}>
+                    <button className="relative btn btn-secondary bg-[#000080] border-0 object-cover object-center">See Details</button>
+                </Link>
                 
             </div>
         </div>
