@@ -1,6 +1,7 @@
 import About from "../../Components/About/About";
 import Banner from "../../Components/Banner/Banner";
 import Contact from "../../Components/Contact/Contact";
+import Footer from "../../Components/Footer/Footer";
 import Services from "../../Components/Services/Services";
 
 const Home = () => {
@@ -17,6 +18,9 @@ const Home = () => {
             </div>
             <div>
                 <Contact></Contact>
+            </div>
+            <div className="pt-4">
+                <Footer></Footer>
             </div>
         </div>
     );
