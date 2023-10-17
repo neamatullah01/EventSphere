@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
+    const {signIn} = useContext(AuthContext);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -9,7 +14,14 @@ const Login = () => {
 
         const email = form.get('email');
         const password = form.get('password');
-        console.log(password, email)
+        signIn(email, password)
+        .then(result=>{
+            console.log(result.user),
+            toast("Login Complete");
+        })
+        .catch(error=>{
+            toast(error.message)
+            })
     }
 
 
@@ -40,6 +52,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary bg-[#000080]">Login</button>
                         </div>
+                        <ToastContainer />
                     </form>
                     <p className="text-center mb-5 ">Do not have an account? <Link className="font-semibold text-blue-600" to="/register">Register</Link></p>
                 </div>
