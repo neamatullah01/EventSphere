@@ -20,6 +20,7 @@ const NavBar = () => {
 
 
   return (
+
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
@@ -39,6 +40,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-end">
         {
+
           user ?
 
             <>
