@@ -3,12 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
     
     const navigate = useNavigate();
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, googleLogIn} = useContext(AuthContext);
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -16,6 +17,7 @@ const Register = () => {
 
         const email = form.get('email');
         const password = form.get('password');
+        const name = form.get('name');
         
         createUser(email, password)
         .then(()=>{
@@ -25,6 +27,14 @@ const Register = () => {
         .catch(error=>{
             toast(error.message)
             })
+    }
+    const handleGoogleLogIn =()=>{
+        googleLogIn()
+        .then(()=>{
+            navigate(location?.state ? location.state : '/')
+            toast.success("Login Successfully");
+        })
+        .catch()
     }
 
 
@@ -41,7 +51,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Name" className="input input-bordered"/>
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered"/>
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -63,6 +73,9 @@ const Register = () => {
                         </div>
                         <ToastContainer />
                     </form>
+                    <div className="flex justify-center px-8 pb-4">
+                        <button onClick={handleGoogleLogIn} className="btn w-full"><FcGoogle className="text-xl"></FcGoogle> Login With Google</button>
+                    </div>
                     <p className="text-center mb-5 ">Already have an account? <Link className="font-semibold text-blue-600" to="/login">Login Now</Link></p>
                 </div>
             </div>

@@ -10,21 +10,21 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
 
-    const handleLogin = e =>{
+    const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
 
         const email = form.get('email');
         const password = form.get('password');
         signIn(email, password)
-        .then(()=>{
-            navigate(location?.state ? location.state : '/')
-            toast.success("Login Successfully");
-        })
-        .catch(error=>{
-            toast(error.message)
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+                toast.success("Login Successfully");
+            })
+            .catch(error => {
+                toast(error.message)
             })
     }
 
@@ -56,9 +56,9 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary bg-[#000080]">Login</button>
                         </div>
-                        
+
                     </form>
-                    <p className="text-center mb-5 ">Do not have an account? <Link className="font-semibold text-blue-600" to="/register">Register</Link></p>
+                    <p className="text-center mb-6 ">Do not have an account? <Link className="font-semibold text-blue-600" to="/register">Register</Link></p>
                 </div>
             </div>
         </div>
