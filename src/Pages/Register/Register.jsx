@@ -6,35 +6,40 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-    
+
     const navigate = useNavigate();
 
-    const {createUser, googleLogIn} = useContext(AuthContext);
+    const { createUser, googleLogIn } = useContext(AuthContext);
 
-    const handleRegister = e =>{
+    const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-
         const email = form.get('email');
         const password = form.get('password');
         const name = form.get('name');
-        
-        createUser(email, password)
-        .then(()=>{
-            navigate('/login')
-            toast.success("Registration Successfully");
-        })
-        .catch(error=>{
-            toast(error.message)
-            })
+
+        if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{6,})$/.test(password)) {
+            toast.error("Enter minimum 6 characters one capital letter and one special character");
+        }
+
+        else {
+            createUser(email, password)
+                .then(() => {
+                    navigate('/login')
+                    toast.success("Registration Successfully");
+                })
+                .catch(error => {
+                    toast(error.message)
+                })
+        }
     }
-    const handleGoogleLogIn =()=>{
+    const handleGoogleLogIn = () => {
         googleLogIn()
-        .then(()=>{
-            navigate(location?.state ? location.state : '/')
-            toast.success("Login Successfully");
-        })
-        .catch()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+                toast.success("Login Successfully");
+            })
+            .catch()
     }
 
 
@@ -51,7 +56,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Name" className="input input-bordered"/>
+                            <input type="text" name="name" placeholder="Name" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
