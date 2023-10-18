@@ -1,41 +1,41 @@
 [
       {
-        "id": 1,
+        "id": "1",
         "type": "Wedding",
         "description": "A beautiful and romantic wedding ceremony.",
         "price": 12000,
         "image": "https://i.ibb.co/2SNTckG/Closeup-shot-wedding.jpg"
       },
       {
-        "id": 2,
+        "id": "2",
         "type": "Birthday Party",
         "description": "A fun-filled 30th birthday celebration.",
         "price": 1500,
         "image": "https://i.ibb.co/N6NQMmc/birthday-celebrations-with-screaming-friends.jpg"
       },
       {
-        "id": 3,
+        "id": "3",
         "type": "Anniversary",
         "description": "A special silver anniversary party.",
         "price": 8000,
         "image": "https://i.ibb.co/SVYR7gz/pexels-nicole-michalou-5774927.jpg"
       },
       {
-        "id": 4,
+        "id": "4",
         "type": "Engagement Party",
         "description": "A joyful engagement celebration.",
         "price": 2000,
         "image": "https://i.ibb.co/KwKfNqg/groom-putting-ring-bride-s-finger.jpg"
       },
       {
-        "id": 5,
+        "id": "5",
         "type": "Retirement Party",
         "description": "A well-deserved retirement party after 35 years of service.",
         "price": 2500,
         "image": "https://i.ibb.co/Yj0Nrnw/pexels-anna-shvets-5257417.jpg"
       },
       {
-        "id": 6,
+        "id": "6",
         "type": "Baby Shower",
         "description": "A sweet baby shower in anticipation of a little one's arrival.",
         "price": 1000,
